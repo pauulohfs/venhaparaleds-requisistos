@@ -43,7 +43,7 @@ Além disso, o sistema oferecerá suporte a notificações ou lembretes sobre ta
 | RF04  | Edição e Exclusão da Tarefa        | RF03       | –            | –           |
 | RF05  | Criação de Categorias Personalizada| –          | –            | –           |
 | RF06  | Filtro de Tarefas                  | RF03       | –            | –           |
-| RF07  | Sistema de notificação             | –          | –            | –           |
+| RF07  | Sistema de notificação             | RF03       | –            | –           |
 
 #### Detalhamento dos Requisitos Funcionais
 
@@ -94,7 +94,18 @@ A interface do sistema deve ser intuitiva e de fácil navegação, utilizando el
 As operações de criação, leitura, atualização e exclusão (CRUD) devem ser executadas de forma eficiente, com tempo de resposta rápido, garantindo um desempenho satisfatório para o usuário final.
 
 ---
+### Diagrama de Classes UML
+![Diagrama de Classes ](UML.jpg)
 
+### Diagrama ER
+![Diagrama ER ](ER.jpg)
+
+### Diagrama de de Processos de negócios
+![Diagrama de Processos de negócios ](BPMN.png)
+
+
+### Diagrama de Caso de Uso Do-To List
 ![Diagrama de Caso de Uso](usecase.png)
+
 
 
