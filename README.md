@@ -1,95 +1,100 @@
-# Desafio Requisitos - LEDS
-*Bem-vindo!* 👋
+# Documento de Requisitos - Sistema To-Do List
 
-Neste desafio, você terá a oportunidade de demonstrar que possui as habilidades necessárias para atuar no time de requisitos do laboratório.
+## 1. Introdução
 
-# Contextualização
+Este documento apresenta a definição de requisitos para o projeto do Sistema de Informação **To-Do List**, oferecendo uma visão geral da solução proposta para o gerenciamento de tarefas diárias por usuários individuais. O sistema busca atender à crescente demanda por organização pessoal e produtividade, permitindo que usuários registrem, acompanhem e priorizem suas atividades de forma eficiente.
 
-Crie uma documentação de requisitos com casos de uso, diagrama de classe, modelo de processos e outros diagramas que achar necessário para o mini-mundo abaixo: 
+## 2. Descrição do Propósito do Sistema
 
+O propósito do Sistema de Informação To-Do List é fornecer uma plataforma digital intuitiva e segura para o gerenciamento de tarefas, visando melhorar a organização pessoal dos usuários, a produtividade diária e o controle do tempo.
 
-## 🎯 **Mini-Mundo: Sistema To-Do List**
+O sistema permitirá que cada usuário cadastre-se e gerencie suas tarefas individualmente, com funcionalidades para criação, edição, exclusão e visualização de tarefas, além da organização por categorias personalizadas. Tarefas poderão ser filtradas por status, prioridade, data de vencimento e categoria, proporcionando uma visualização clara e segmentada das obrigações do dia a dia.
 
-O sistema **To-Do List** tem como objetivo auxiliar **usuários** no gerenciamento de suas tarefas diárias. Cada **usuário** pode se cadastrar no sistema informando seu **nome**, **email** e **senha**, sendo que cada conta é individual e protegida por autenticação segura.
-
-Após o login, o **usuário** acessa seu **painel de tarefas**, onde pode **criar, editar, excluir e visualizar suas tarefas**. Cada tarefa possui informações como **título, descrição, data de vencimento, prioridade, status e, opcionalmente, uma categoria**.
-
-As tarefas são organizadas por **categorias**, que também são criadas e gerenciadas pelos próprios usuários. Isso permite que cada um personalize seu ambiente de organização, separando tarefas por contextos como **trabalho, estudos ou pessoal**.
-
-O sistema permite que o usuário acompanhe o **status das tarefas**, que podem estar como **pendente, em andamento, concluída ou cancelada**. Além disso, oferece filtros para visualização das tarefas por **status, data de vencimento, prioridade e categoria**, facilitando o controle e o planejamento.
-
-O sistema também pode, de forma opcional, enviar **notificações ou lembretes** sobre tarefas próximas do vencimento, mantendo os usuários informados e ajudando na gestão do tempo.
-
-Todo o ambiente do sistema é seguro, com **senhas criptografadas**, e funciona de forma responsiva, adaptando-se tanto para **desktop quanto para dispositivos móveis**, garantindo uma boa experiência de uso.
-
-
-
-# Como entregar?
-1. Faça um **fork** do repositório. Nesse fork esperamos encontrar uma documentação completa da solução e a listagem dos diferenciais implementados.
-2. Abra um **pull request (PR)** do seu fork para o nome repositório com o seu nome como título. Assim conseguimos te localizar melhor e ver que você já finalizou o desafio!
-
-🚨 **Atenção**: você deve enviar apenas o código fonte. Não serão aceitos códigos compilados.
-
-## Avaliação
-
-A documentação será avaliado levando em conta os seguintes critérios:
-
-Perfeito! Aqui está a tabela atualizada **removendo o critério de Tratamento de Erros** e ajustando o total:
+Além disso, o sistema oferecerá suporte a notificações ou lembretes sobre tarefas com vencimento próximo, auxiliando o usuário a manter o foco e cumprir prazos com maior eficiência. Todas as interações ocorrerão em um ambiente seguro, com autenticação criptografada, e adaptado para diferentes dispositivos.
 
 ---
 
-## 📊 **Tabela de Critérios de Avaliação**
+## 3. Stack Tecnológica
 
-| Critério                       | Valor  |
-| ------------------------------ | ------ |
-| Documentação da Solução        | 10     |
-| 🏛️ Diagrama de Classes        | 10     |
-| 📜 Especificação de Requisitos | 10     |
-| 🔄 Diagrama BPMN (Processos)   | 10     |
-| 🎭 Diagrama de Casos de Uso    | 10     |
-| **Total**                      | **50** |
+### Frontend
+- **Tecnologia:** React.js  
+- **Estilo Responsivo:** CSS Flexbox e Grid Layout
+
+### Backend
+- **Tecnologia:** Spring Boot (Java)  
+- **Estrutura:** Arquitetura em camadas padrão MVC (Controller, Service, Repository)  
+- **Segurança:** Autenticação com Spring Security + JWT (JSON Web Token)
+
+### Banco de Dados
+- **SGDB:** PostgreSQL  
+- **Relacionamentos:** Mapeados via JPA/Hibernate
 
 ---
 
-### ✅ **Descrição dos Critérios**
+## 4. Especificação de Requisitos
 
-| Critério                        | Descrição                                                                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **Documentação da Solução**     | Documento descrevendo a arquitetura, funcionamento, tecnologias usadas e visão geral da solução.  |
-| **Diagrama de Classes**         | Representação correta das entidades, atributos, métodos e relacionamentos do sistema.             |
-| **Especificação de Requisitos** | Documento com requisitos funcionais e não funcionais claros, bem estruturados e completos.        |
-| **Diagrama BPMN**               | Modelagem correta dos processos de negócio que o sistema executa, com clareza e completude.       |
-| **Diagrama de Casos de Uso**    | Diagrama mostrando claramente os atores e suas interações com o sistema, alinhado aos requisitos. |
+### 4.1 Requisitos Funcionais
+
+| ID    | Descrição                          | Depende de | Interessados | Responsável |
+|-------|------------------------------------|------------|--------------|-------------|
+| RF01  | Cadastro de Usuários               | –          | –            | –           |
+| RF02  | Autenticação do Usuário            | RF01       | –            | –           |
+| RF03  | Cadastro de Tarefas                | RF02       | –            | –           |
+| RF04  | Edição e Exclusão da Tarefa        | RF03       | –            | –           |
+| RF05  | Criação de Categorias Personalizada| –          | –            | –           |
+| RF06  | Filtro de Tarefas                  | RF03       | –            | –           |
+| RF07  | Sistema de notificação             | –          | –            | –           |
+
+#### Detalhamento dos Requisitos Funcionais
+
+**RF01 - Cadastro de Usuários:**  
+O sistema deve permitir que novos usuários se cadastrem, informando dados como nome, e-mail e senha. Cada conta deve ser individual e protegida por autenticação segura.
+
+**RF02 - Autenticação do Usuário:**  
+O sistema deve permitir que o usuário acesse sua conta por meio de login com e-mail e senha, garantindo segurança através de validação de credenciais e criptografia de senha.
+
+**RF03 - Cadastro de Tarefas:**  
+O sistema deve permitir que o usuário cadastre tarefas informando título, descrição, data de vencimento, prioridade, status e, opcionalmente, uma categoria associada.
+
+**RF04 - Edição e Exclusão da Tarefa:**  
+O sistema deve permitir que o usuário edite ou exclua tarefas previamente cadastradas, atualizando ou removendo seus dados de forma segura e prática.
+
+**RF05 - Criação de Categorias Personalizadas:**  
+O sistema deve permitir que o usuário crie categorias personalizadas para organizar suas tarefas, como “Trabalho”, “Estudos” ou “Pessoal”, de forma livre e individual.
+
+**RF06 - Filtro de Tarefas:**  
+O sistema deve oferecer filtros para que o usuário visualize suas tarefas com base em critérios como status, data de vencimento, prioridade ou categoria, facilitando a organização e o planejamento.
+
+**RF07 - Sistema de Notificação:**  
+O sistema deve, de forma opcional, enviar notificações ou lembretes automáticos ao usuário sobre tarefas próximas do vencimento, conforme preferências configuradas, ajudando na gestão do tempo.
+
+---
+
+### 4.2 Requisitos Não Funcionais
+
+| ID     | Descrição                        | Categoria      | Depende de | Aplica-se a          |
+|--------|----------------------------------|----------------|------------|----------------------|
+| RNF01  | Interface Responsiva             | Portabilidade  | –          | Frontend             |
+| RNF02  | Senhas Criptografadas            | Segurança      | –          | Backend              |
+| RNF03  | Interface Amigável               | Usabilidade    | –          | Frontend             |
+| RNF04  | Tempo de Operações CRUD          | Desempenho     | –          | Frontend + Backend   |
+
+#### Detalhamento dos Requisitos Não Funcionais
+
+**RNF01 - Interface Responsiva:**  
+A interface do sistema deve ser responsiva, garantindo uma experiência de uso adequada em diferentes dispositivos e tamanhos de tela, incluindo desktops, tablets e smartphones. O layout deve se adaptar dinamicamente para oferecer boa usabilidade e acessibilidade, independentemente do dispositivo utilizado.
+
+**RNF02 - Senhas Criptografadas:**  
+As senhas dos usuários devem ser armazenadas de forma segura utilizando criptografia, garantindo confidencialidade e proteção contra acessos indevidos.
+
+**RNF03 - Interface Amigável:**  
+A interface do sistema deve ser intuitiva e de fácil navegação, utilizando elementos visuais claros e bem organizados, com foco na usabilidade para todos os perfis de usuários.
+
+**RNF04 - Tempo de Operações CRUD:**  
+As operações de criação, leitura, atualização e exclusão (CRUD) devem ser executadas de forma eficiente, com tempo de resposta rápido, garantindo um desempenho satisfatório para o usuário final.
+
+---
+
+![Diagrama de Caso de Uso](usecase.png)
 
 
-
-# Penalizações
-
-Você será desclassificado se:
-
-1. Enviar uma descrição com erros.
-2. Não cumprir os critérios da seção **Avaliação**.
-3. For identificado plágio.
-   
-***Que a força esteja com você. Boa sorte!***
-
-<div align="left">
-</div>
-
-###
-
-<br clear="both">
-
-<div align="center">
-  <a href="https://www.linkedin.com/school/ledsifes" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="linkedin logo"  />
-  </a>
-  <a href="https://www.instagram.com/ledsifes/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="instagram logo"  />
-  </a>
-  <a href="https://www.youtube.com/@ledsifes/?sub_confirmation=1" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="youtube logo"  />
-  </a>
-</div>
-
-###
